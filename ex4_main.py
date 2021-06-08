@@ -16,9 +16,10 @@ def displayDepthImage(l_img, r_img, disparity_range=(0, 5), method=disparitySSD)
 def main():
     ## 1-a
     # Read images
+    print("My ID - 207205972\n")
     i = 0
-    L = cv2.imread(os.path.join('input', 'pair%d-L.png' % i), 0) / 255.0
-    R = cv2.imread(os.path.join('input', 'pair%d-R.png' % i), 0) / 255.0
+    L = cv2.imread(os.path.join('pair%d-L.png' % i), 0) / 255.0
+    R = cv2.imread(os.path.join('pair%d-R.png' % i), 0) / 255.0
     # Display depth SSD
     displayDepthImage(L, R, (0, 5), method=disparitySSD)
     # Display depth NC
@@ -40,10 +41,10 @@ def main():
     #pred = unHomogeneous(pred)
     #print(np.sqrt(np.square(pred-dst).mean()))
 
-    # dst = cv2.imread(os.path.join('input', 'billBoard.jpg'), 0) / 255.0
-    # src = cv2.imread(os.path.join('input', 'car.jpg'), 0) / 255.0
+    dst = cv2.imread(os.path.join('billBoard.jpg'), 0) / 255.0
+    src = cv2.imread(os.path.join('car.jpg'), 0) / 255.0
 
-    # warpImag(src, dst)
+    warpImag(src, dst)
 
 
 if __name__ == '__main__':
